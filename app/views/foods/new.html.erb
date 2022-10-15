@@ -1,0 +1,28 @@
+<h1>New Entry</h1>
+
+<%= render "form", food: @food %>
+<p><%= link_to "< Back", root_path %></p>
+
+<% if false %>
+    <%= form_with model: @food do |form| %>
+        <div>
+            <%= form.label :food %><br>
+            <%= form.text_field :food %><br>
+            <% @food.errors.full_messages_for(:food).each do |message| %>
+                <div><%= message %></div>
+            <% end %>
+        </div>
+
+        <div>
+            <%= form.label :rating %><br>
+            <%= form.text_field :rating %><br>
+            <% @food.errors.full_messages_for(:rating).each do |message| %>
+                <div><%= message %></div>
+            <% end %>
+        </div>
+
+        <div>
+            <%= form.submit %>
+        </div>
+    <% end %>
+<% end %>

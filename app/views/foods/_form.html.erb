@@ -1,0 +1,25 @@
+<%# all @food is replaced with food as per best practice %>
+<%# Because partials are shared code, it is best practice that they do not depend on specific instance variables set by a controller action %>
+
+
+<%= form_with model: food do |form| %>
+    <div>
+        <%= form.label :food %>
+        <%= form.text_field :food %>
+        <% food.errors.full_messages_for(:food).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :rating %>
+        <%= form.text_field :rating %>
+        <% food.errors.full_messages_for(:rating).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <button>
+        <%= form.submit %>
+    </button>
+<% end %>

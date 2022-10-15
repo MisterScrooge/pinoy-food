@@ -1,0 +1,14 @@
+<h1><%= @food.id %>. <%= @food.food %></h1>
+
+<p>Rating: <%= @food.rating %></p>
+
+<% if false %>
+<ul>
+    <li><button><%= link_to "Edit", edit_food_path(@food) %></button></li>
+    <li><button><%= link_to "Destroy", food_path(@food), method: :delete, data: {
+        confirm: "You sure?"
+    } %></button></li>
+</ul>
+<% end %>
+
+<p><%= link_to "< Back", root_path %></p>

@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  food: MyString
+  rating: MyString
+
+two:
+  food: MyString
+  rating: MyString

@@ -33,11 +33,9 @@ class FoodsController < ApplicationController
     if @food.update(food_params)
       redirect_to root_path
     else
-      render :edit, status: :unprocessable_entity
+      render :edit
     end
   end
-  
-  # add'l code
 
   def destroy
     # @food = Food.find(params[:id])

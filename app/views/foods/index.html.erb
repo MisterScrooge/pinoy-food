@@ -1,18 +1,18 @@
-<h1>Pinoy Foods Rating</h1>
+<h1>🍡 Pinoy Foods Rating</h1>
 
 <table>
     <thead>
         <tr>
             <th>Food</th>
             <th>Rating</th>
-            <th colspan="5"></th>
+            <th colspan="3"></th>
         </tr>
     </thead>
 
     <tbody>
         <% @foods.each do |food| %>
             <tr>
-                <td class="item"><%= food.food %></td>
+                <td class="item"><%= food.food.upcase %></td>
                 <td class="item"><%= food.rating %></td>
                 <td class="item-method"><%= link_to "Show", food %></td>
                 <td class="item-method"><%= link_to "Edit", edit_food_path(food) %></td>
@@ -39,6 +39,15 @@
         <div>
             <%= link_to food.food, food %>
             <%# food.food %>
+            <div>
+                <h3><%= food.food.upcase %></h3>
+                <h2><%= food.rating %></h2>
+            </div>
+            <div>
+                <%= link_to "Show", food %>
+                <%= link_to "Edit", edit_food_path(food) %>
+                <%= link_to "Delete", food, method: :delete, data: { confirm: "You sure?" } %>
+            </div>
         </div>
     <% end %>
 </ul>
